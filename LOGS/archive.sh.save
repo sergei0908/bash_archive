@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for dir in auth_service data_process_serviыe system_event_handler_service; do
-	tar -czf "archive_$(date +%s)" -C $dir $(ls "$dir"/*.log | head -n 2)
-	if [ $? -q 0 ]; then
-		rm ls "$dir"/*.log | head -n 2
-	fi
-done
